@@ -91,6 +91,18 @@ $("#filter-labor").click(function() {
 
 });
 
+function createEntry(category, firstName, categoryName, description, askOrGive) {
+
+    var newEntry = "";
+    newEntry += "<li class=\""+category+"\"> <h4> <b class=\"name\">" + firstName + "</b>";
+    if(askOrGive = "ask") {
+        newEntry += " offers ";
+    }
+    newEntry += "<b class=\"category\">" + categoryName + "</b></h4>";
+    newEntry += "<p class=\"description\">" + description + "</p></li>";
+
+}
+
 function addHelp() {
     var firstName = $("#give-first-name").val();
     var lastName = $("#give-last-name").val();
