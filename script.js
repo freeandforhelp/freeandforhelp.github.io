@@ -1,5 +1,17 @@
 $(document).ready(function() {
     givePage();
+    // ask posts
+    addEntry("Nick","category-transport","The busses aren't running and I don't have a car","ask");
+    addEntry("Sarah","category-shelter","I have no electricity right now","ask");
+    addEntry("Johnny","category-food-water","I am looking for distilled water specifically","ask");
+    addEntry("Annie","category-labor","I need help moving my couch into my truck","ask");
+    addEntry("Thomas","category-transport","I need a ride to the hospital","ask");
+    // give posts
+    addEntry("Miley","category-food-water","I have 10 cans of beans to provide","give");
+    addEntry("Charlie","category-shelter","I have an extra room in my house","give");
+    addEntry("Tyler","category-food-water","I have 10 gallons of water","give");
+    addEntry("Philip","category-transport","I have space in my pickup to move things","give");
+    addEntry("Thomas","category-transport","I have room in my car to drop off kids at the elementary school with my son","give");
 });
 
 function askPage() {
@@ -49,7 +61,9 @@ function filters() {
         $(".category-shelter").show();
         $(".category-transport").show();
         $(".category-labor").show();
+        $(".category-other").show();
     } else {
+        $(".category-other").hide();
         if(foodWater) {
             $(".category-food-water").show();
         } else {
@@ -91,15 +105,46 @@ $("#filter-labor").click(function() {
 
 });
 
-function createEntry(category, firstName, categoryName, description, askOrGive) {
+function addEntry(firstName, category, description, askOrGive) {
+    if(askOrGive == "ask") {
+        $("#ask-list").prepend(createEntry(firstName, category, description,askOrGive));
+    } else {
+        $("#give-list").prepend(createEntry(firstName, category, description,askOrGive));
+    }
+}
+
+function createEntry(firstName, category, description, askOrGive) {
+
+    var category;
+    if(category == "category-other") {
+        categoryName = "Other";
+    }
+    if(category == "category-transport") {
+        categoryName = "Transportation";
+    }
+    if(category == "category-food-water") {
+        categoryName = "Food/Water";
+    }
+    if(category == "category-shelter") {
+        categoryName = "Shelter";
+    }
+    if(category == "category-labor") {
+        categoryName = "Labor";
+    }
 
     var newEntry = "";
     newEntry += "<li class=\""+category+"\"> <h4> <b class=\"name\">" + firstName + "</b>";
-    if(askOrGive = "ask") {
+    console.log("hello");
+    console.log(askOrGive);
+    if(askOrGive == "ask") {
+        newEntry += " needs ";
+    } else {
         newEntry += " offers ";
     }
     newEntry += "<b class=\"category\">" + categoryName + "</b></h4>";
     newEntry += "<p class=\"description\">" + description + "</p></li>";
+
+    return newEntry;
 
 }
 
@@ -109,21 +154,26 @@ function addHelp() {
     var category = "";
     var description = $("#give-description").val();
     if($("#give-cat-labor").is(':checked')) {
-        category = "Labor";
+        categoryName = "Labor";
+        category = "category-labor";
     } else if($("#give-cat-food-water").is(':checked')) {
-        category = "Food/Water";
+        categoryName = "Food/Water";
+        category = "category-food-water";
     } else if($("#give-cat-transport").is(':checked')) {
-        category = "Transportation";
+        categoryName = "Transportation";
+        category = "category-transport";
     } else if($("#give-cat-other").is(':checked')) {
-        category = "Other";
+        categoryName = "Other";
+        category = "category-other";
     } else if($("#give-cat-shelter").is(':checked')) {
-        category = "Shelter";
+        categoryName = "Shelter";
+        category = "category-shelter";
     }
 
-    var newEntry = "";
-    newEntry += "<li> <h4> <b class=\"name\">" + firstName + "</b>";
-    newEntry += " offers <b class=\"category\">" + category + "</b></h4>";
-    newEntry += "<p class=\"description\">" + description + "</p></li>";
+    var newEntry = createEntry(category, firstName, description, "ask");
+    // newEntry += "<li class=\""+category+"\"> <h4> <b class=\"name\">" + firstName + "</b>";
+    // newEntry += " offers <b class=\"category\">" + categoryName + "</b></h4>";
+    // newEntry += "<p class=\"description\">" + description + "</p></li>";
 
     $("#give-list").prepend(newEntry);
 
