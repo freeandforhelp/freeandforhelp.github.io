@@ -83,14 +83,41 @@
    </div>
 
 
-   <div class="container" id="give-content">
+   <div class="container" id="post-content">
       <div class="row">
-         <div class="col-lg-3 give-content-container left-panel">
+         <div class="col-lg-3 post-content-container left-panel">
             <input type="text" name="search" placeholder="Search..">
-         </div>
-         <div class="col-lg-6 give-content-container middle-panel">
-            <ul class="post-list" id="ask-list">
-                <li>
+			<div class="form-group">
+				<h3> Filter</h3>
+				<div class="form-check">
+					<label class="form-check-label">
+						<input class="form-check-input" id="filter-food-water" type="checkbox" value="">
+						Food/Water
+					</label>
+				</div>
+				<div class="form-check">
+					<label class="form-check-label">
+						<input class="form-check-input" id="filter-shelter" type="checkbox" value="">
+						Shelter
+					</label>
+				</div>
+				<div class="form-check">
+					<label class="form-check-label">
+						<input class="form-check-input" id="filter-transport" type="checkbox" value="">
+						Transportation
+					</label>
+				</div>
+				<div class="form-check">
+					<label class="form-check-label">
+						<input class="form-check-input" id="filter-labor" type="checkbox" value="">
+						Labor
+					</label>
+				</div>
+			</div>
+     	</div>
+         <div class="col-lg-6 post-content-container middle-panel">
+            <ul class="post-list give-page" id="ask-list">
+                <li class="category-food-water">
                     <h4>
                        <b class="name">Johnny</b> needs <b class="category">Water</b>
                    </h4>
@@ -98,7 +125,7 @@
                         I am looking for distilled water only.
                     </p>
                 </li>
-                <li>
+                <li class="category-shelter">
                     <h4>
                        <b class="name">Sarah</b> needs <b class="category">Shelter</b>
                    </h4>
@@ -106,7 +133,7 @@
                         I have no electricity right now.
                     </p>
                 </li>
-                <li>
+                <li class="category-transport">
                     <h4>
                        <b class="name">Nick</b> needs <b class="category">Transportation</b>
                    </h4>
@@ -117,10 +144,13 @@
 
             </ul>
          </div>
-         <div class="col-lg-3 give-content-container right-panel">
-            <h3>Have Something Else To Offer?</h3>
-            <button type="button" class="btn btn-info btn-lg"
+         <div class="col-lg-3 post-content-container right-panel">
+            <h3 class="give-page">Have Something Else To Offer?</h3>
+			<h3 class="ask-page">Do You Need Something Else?</h3>
+            <button type="button" class="btn btn-info btn-lg give-page"
             data-toggle="modal" data-target="#give-post"> Give! </button>
+			<button type="button" class="btn btn-info btn-lg ask-page"
+			data-toggle="modal" data-target="#ask-post"> Ask! </button>
 
          </div>
       </div>
@@ -189,28 +219,10 @@
           </div>
         </div>
       </div>
-
-      <div class="container" id="ask-content">
-         <div class="row">
-            <div class="col-lg-3 give-content-container left-panel">
-               <input type="text" name="search" placeholder="Search..">
-            </div>
-            <div class="col-lg-6 give-content-container middle-panel">
-               <ul class="post-list" id="give-list">
-
-               </ul>
-            </div>
-            <div class="col-lg-3 give-content-container right-panel">
-               <h3>Do you need something else?</h3>
-               <button type="button" class="btn btn-info btn-lg"
-               data-toggle="modal" data-target="#givePost"> Ask! </button>
-
-            </div>
-         </div>
-         <div id="givePost" class="modal fade" role="dialog">
+	  <div id="ask-post" class="modal fade" role="dialog">
              <div class="modal-dialog">
-                 <div class="form" id="give-form">
-                     <h3> Fill Out This Form To Offer Additional Resources </h3>
+                 <div class="form" id="ask-form">
+                     <h3> Fill Out This Form To Request Additional Resources </h3>
                      <form action="#">
                          <div class="form-group">
                              <label> First Name:</label>

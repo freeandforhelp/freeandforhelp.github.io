@@ -1,29 +1,95 @@
 $(document).ready(function() {
-    $("#ask-content").hide();
-    $("#give-content").hide();
+    givePage();
 });
 
-$(".ask-link").click(function() {
-    $("#give-content").hide();
-    $("#ask-content").show();
+function askPage() {
+    $("#post-content").show();
+    $(".give-page").hide();
+    $(".ask-page").show();
     $("#home-content").hide();
-})
+}
 
-$(".give-link").click(function() {
-    $("#ask-content").hide();
-    $("#give-content").show();
+function givePage() {
+    $("#post-content").show();
+    $(".ask-page").hide();
+    $(".give-page").show();
     $("#home-content").hide();
-})
+}
 
-$(".home-link").click(function() {
+function homePage() {
     $("#ask-content").hide();
     $("#give-content").hide();
     $("#home-content").show();
+}
+
+$(".ask-link").click(function() {
+    askPage();
+})
+
+$(".give-link").click(function() {
+    givePage();
+})
+
+$(".home-link").click(function() {
+    homePage();
 })
 
 $("#submit-give").click(function() {
     addHelp();
 })
+
+function filters() {
+    var foodWater = $("#filter-food-water").prop('checked');
+    var shelter = $("#filter-shelter").prop('checked');
+    var transport = $("#filter-transport").prop('checked');
+    var labor = $("#filter-labor").prop('checked');
+
+    if(!foodWater && !shelter && !transport && !labor) {
+        $(".category-food-water").show();
+        $(".category-shelter").show();
+        $(".category-transport").show();
+        $(".category-labor").show();
+    } else {
+        if(foodWater) {
+            $(".category-food-water").show();
+        } else {
+            $(".category-food-water").hide();
+        }
+        if(shelter) {
+            $(".category-shelter").show();
+        } else {
+            $(".category-shelter").hide();
+        }
+        if(transport) {
+            $(".category-transport").show();
+        } else {
+            $(".category-transport").hide();
+        }
+        if(labor) {
+            $(".category-labor").show();
+        } else {
+            $(".category-labor").hide();
+        }
+    }
+}
+
+$("#filter-food-water").click(function() {
+    filters();
+
+});
+
+$("#filter-shelter").click(function() {
+    filters();
+
+});
+$("#filter-transport").click(function() {
+    filters();
+
+});
+$("#filter-labor").click(function() {
+    filters();
+
+});
 
 function addHelp() {
     var firstName = $("#give-first-name").val();
