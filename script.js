@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    givePage();
+    homePage();
     // ask posts
     addEntry("Nick","category-transport","The busses aren't running and I don't have a car","ask");
     addEntry("Sarah","category-shelter","I have no electricity right now","ask");
@@ -29,6 +29,7 @@ function givePage() {
 }
 
 function homePage() {
+    $("#post-content").hide();
     $("#ask-content").hide();
     $("#give-content").hide();
     $("#home-content").show();
@@ -48,6 +49,26 @@ $(".home-link").click(function() {
 
 $("#submit-give").click(function() {
     addHelp();
+})
+
+$("#submit-ask").click(function() {
+    addAsk();
+})
+
+$("#nav-wordmark").click(function() {
+    homePage();
+});
+
+function closeModal() {
+    $('.modal').hide();
+    $('.modal').removeClass('in');
+    $('.modal').removeAttr('padding-left');
+    $('.modal-backdrop').remove();
+
+}
+
+$(".close").click(function () {
+    closeModal();
 })
 
 function filters() {
@@ -170,11 +191,42 @@ function addHelp() {
         category = "category-shelter";
     }
 
-    var newEntry = createEntry(category, firstName, description, "ask");
+    var newEntry = createEntry(firstName, category, description, "give");
     // newEntry += "<li class=\""+category+"\"> <h4> <b class=\"name\">" + firstName + "</b>";
     // newEntry += " offers <b class=\"category\">" + categoryName + "</b></h4>";
     // newEntry += "<p class=\"description\">" + description + "</p></li>";
 
     $("#give-list").prepend(newEntry);
+
+}
+
+function addAsk() {
+    var firstName = $("#give-first-name").val();
+    var lastName = $("#give-last-name").val();
+    var category = "";
+    var description = $("#give-description").val();
+    if($("#give-cat-labor").is(':checked')) {
+        categoryName = "Labor";
+        category = "category-labor";
+    } else if($("#give-cat-food-water").is(':checked')) {
+        categoryName = "Food/Water";
+        category = "category-food-water";
+    } else if($("#give-cat-transport").is(':checked')) {
+        categoryName = "Transportation";
+        category = "category-transport";
+    } else if($("#give-cat-other").is(':checked')) {
+        categoryName = "Other";
+        category = "category-other";
+    } else if($("#give-cat-shelter").is(':checked')) {
+        categoryName = "Shelter";
+        category = "category-shelter";
+    }
+
+    var newEntry = createEntry(firstName, category, description, "ask");
+    // newEntry += "<li class=\""+category+"\"> <h4> <b class=\"name\">" + firstName + "</b>";
+    // newEntry += " offers <b class=\"category\">" + categoryName + "</b></h4>";
+    // newEntry += "<p class=\"description\">" + description + "</p></li>";
+
+    $("#ask-list").prepend(newEntry);
 
 }

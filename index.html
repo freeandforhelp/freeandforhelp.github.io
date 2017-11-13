@@ -135,6 +135,9 @@
       </div>
       <div id="give-post" class="modal fade" role="dialog">
           <div class="modal-dialog">
+			  <button type="button" class="close" aria-label="Close" id="close-give-post">
+  		 		<span aria-hidden="true">&times;</span>
+	  			</button>
               <div class="form" id="give-form">
                   <h3> Fill Out This Form To Offer Additional Resources </h3>
                   <form action="#">
@@ -197,9 +200,11 @@
               </div>
           </div>
         </div>
-      </div>
 	  <div id="ask-post" class="modal fade" role="dialog">
              <div class="modal-dialog">
+				 <button type="button" class="close" aria-label="Close" id="close-ask-post">
+     		 		<span aria-hidden="true">&times;</span>
+   	  			</button>
                  <div class="form" id="ask-form">
                      <h3> Fill Out This Form To Request Additional Resources </h3>
                      <form action="#">
@@ -256,17 +261,19 @@
 
 
                         <p>
-                        <button type="button"> Submit </button>
+                        <button type="button" class="submit" id="submit-ask"> Submit </button>
                        </p>
                      </form>
                  </div>
              </div>
          </div>
+	 </div>
 
 
 
    </div>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
    <script src="script.js"></script>
 
 </body>
