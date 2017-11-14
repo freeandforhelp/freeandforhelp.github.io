@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    homePage();
+    givePage();
     // ask posts
     addEntry("Nick","category-transport","The busses aren't running and I don't have a car","ask");
     addEntry("Sarah","category-shelter","I have no electricity right now","ask");
@@ -19,6 +19,7 @@ function askPage() {
     $(".give-page").hide();
     $(".ask-page").show();
     $("#home-content").hide();
+    $("#learn-content").hide();
 }
 
 function givePage() {
@@ -26,6 +27,7 @@ function givePage() {
     $(".ask-page").hide();
     $(".give-page").show();
     $("#home-content").hide();
+    $("#learn-content").hide();
 }
 
 function homePage() {
@@ -33,6 +35,15 @@ function homePage() {
     $("#ask-content").hide();
     $("#give-content").hide();
     $("#home-content").show();
+    $("#learn-content").hide();
+}
+
+function learnPage() {
+    $("#post-content").hide();
+    $("#ask-content").hide();
+    $("#give-content").hide();
+    $("#home-content").hide();
+    $("#learn-content").show();
 }
 
 $(".ask-link").click(function() {
@@ -45,6 +56,10 @@ $(".give-link").click(function() {
 
 $(".home-link").click(function() {
     homePage();
+})
+
+$(".learn-link").click(function() {
+    learnPage();
 })
 
 $("#submit-give").click(function() {
