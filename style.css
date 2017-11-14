@@ -123,12 +123,20 @@ a:visited { text-decoration: none; color:unset; }
 }
 
 .content_block_element {
-	display: inline-block;
+	/*display: inline-block;
 	height: 200px;
 	width: 200px;
 	margin: 17px;
 	border: 3.5px solid #2f2343;
+	background-color: #9079b9;*/
+
+	display: inline-block;
+	height: 200px;
+	width: 30%;
+	margin: 1%;
+	border: 3.5px solid #2f2343;
 	background-color: #9079b9;
+	vertical-align: top;
 }
 
 .content_block_name {
