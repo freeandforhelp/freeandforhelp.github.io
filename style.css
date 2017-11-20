@@ -234,6 +234,17 @@ a:visited { text-decoration: none; color:unset; }
 	text-decoration: underline;
 }
 
+#event-spotlight{
+	color: white;
+	text-shadow: 2px 2px #000000;
+	margin: 50px 0; 
+	border: 2px solid black; 
+	padding: 5px; 
+	background-image: url(images/maria.jpg);
+	background-size: cover;
+	height: 300px;
+}
+
 .spotlight_body_text {
 	margin-left: 18px;
 	font-size: 12pt;
