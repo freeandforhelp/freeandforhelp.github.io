@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    givePage();
+    homePage();
     // ask posts
     addEntry("Nick","category-transport","The busses aren't running and I don't have a car","ask");
     addEntry("Sarah","category-shelter","I have no electricity right now","ask");
