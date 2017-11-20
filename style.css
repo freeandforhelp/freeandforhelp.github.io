@@ -17,10 +17,17 @@ a:visited { text-decoration: none; color:unset; }
 }
 
 .post-header {
-	background:  #9079b9;
 	margin: 0;
 	height: 50px;
-	background:  #f2f2f2;
+}
+
+.profpic {
+	width:100%;
+	padding: 5px;
+}
+
+.card-block {
+	padding: 5px;
 }
 
 .form {
@@ -98,8 +105,6 @@ a:visited { text-decoration: none; color:unset; }
 .post-list li {
 	color: black;
 	margin: 5px;
-	background: #f2f2f2;
-	height: 10em;
 }
 
 #welcome_block {
@@ -233,28 +238,3 @@ a:visited { text-decoration: none; color:unset; }
 	margin-left: 18px;
 	font-size: 12pt;
 }
-
-/*fixed left navbar*/
-
-.navbar-fixed-left {
-  width: 140px;
-  position: fixed;
-  border-radius: 0;
-  height: 100%;
-}
-
-.navbar-fixed-left .navbar-nav > li {
-  float: none;  /* Cancel default li float: left */
-  width: 139px;
-}
-
-.navbar-fixed-left + .container {
-  padding-left: 160px;
-}
-
-/* On using dropdown menu (To right shift popuped) */
-.navbar-fixed-left .navbar-nav > li > .dropdown-menu {
-  margin-top: -50px;
-  margin-left: 140px;
-}
-/*fixed left navbar end*/

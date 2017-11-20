@@ -13,6 +13,10 @@
     <!-- Latest compiled and minified Bootstrap CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/modern-business.css" rel="stylesheet">
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
+
     <!-- <link rel="stylesheet" type="text/css" href="style.css"/> -->
     <!-- Optional theme -->
 
@@ -22,9 +26,10 @@
 </head>
 <body>
 
+
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Free And For Sale</a>
+            <a class="navbar-brand" href="index.html">Free And For Help</a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -102,46 +107,90 @@
             </div>
         </div>
         <div id="post-content">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 post-content-container left-panel">
-                        <input type="text" name="search" placeholder="Search..">
-                        <div class="form-group">
-                            <h3> Filter</h3>
+            <div id="wrapper">
+
+                <!-- Sidebar -->
+                <div id="sidebar-wrapper">
+
+                    <ul class="sidebar-nav">
+                        <li class="sidebar-brand">
+                            Filter
+                        </li>
+                        <li>
                             <div class="form-check">
                                 <label class="form-check-label">
                                     <input class="form-check-input" id="filter-food-water" type="checkbox" value="">
                                     Food/Water
                                 </label>
                             </div>
+                        </li>
+                        <li>
                             <div class="form-check">
                                 <label class="form-check-label">
                                     <input class="form-check-input" id="filter-shelter" type="checkbox" value="">
                                     Shelter
                                 </label>
                             </div>
+                        </li>
+                        <li>
                             <div class="form-check">
                                 <label class="form-check-label">
                                     <input class="form-check-input" id="filter-transport" type="checkbox" value="">
                                     Transportation
                                 </label>
                             </div>
+                        </li>
+                        <li>
                             <div class="form-check">
                                 <label class="form-check-label">
                                     <input class="form-check-input" id="filter-labor" type="checkbox" value="">
                                     Labor
                                 </label>
                             </div>
+                        </li>
+                        <li>
+                            <div>
+                            <h3 class="question give-page">Have Something Else To Offer?</h3>
+                            <h3 class="question ask-page">Do You Need Something Else?</h3>
+                            <button type="button" class="btn btn-info btn-lg give-page"
+                            data-toggle="modal" data-target="#give-post"> Give! </button>
+                            <button type="button" class="btn btn-info btn-lg ask-page"
+                            data-toggle="modal" data-target="#ask-post"> Ask! </button>
                         </div>
-                    </div>
-                    <div class="col-lg-6 post-content-container middle-panel">
+                        </li>
+                    </ul>
+
+                </div>
+                <!-- /#sidebar-wrapper -->
+
+                <!-- Page Content -->
+                <div id="page-content-wrapper">
+                    <div class="col-lg-8 post-content-container middle-panel">
                         <div class="post-header">
                             <h2 class="give-page">People Looking for Help</h2>
                             <h2 class="ask-page">People Offering Help</h2>
                         </div>
                         <div class="post-content-scroller">
                             <ul class="post-list give-page" id="ask-list">
+                                <li class="post-card">
                                 <div class="card">
+                                    <div class="card-block">
+                                        <div class="row">
+                                            <div class="col-sm-2">
+                                                <img class="profpic" src="images\blank-profile.png">
+                                            </div>
+                                            <div class="col-sm-10">
+                                                <h4 class="card-title">Jennie</h4>
+                                                <h6 class="card-subtitle mb-2 text-muted">needs Water</h6>
+                                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                                <p class="distance text-muted">1 mile away</p>
+                                                <a href="#" class="card-link">Contact Jennie</a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
 
                             </ul>
                             <ul class="post-list ask-page" id="give-list">
@@ -149,16 +198,17 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-3 post-content-container right-panel">
-                        <h3 class="give-page">Have Something Else To Offer?</h3>
-                        <h3 class="ask-page">Do You Need Something Else?</h3>
-                        <button type="button" class="btn btn-info btn-lg give-page"
-                        data-toggle="modal" data-target="#give-post"> Give! </button>
-                        <button type="button" class="btn btn-info btn-lg ask-page"
-                        data-toggle="modal" data-target="#ask-post"> Ask! </button>
-
-                    </div>
                 </div>
+                <!-- /#page-content-wrapper -->
+
+
+
+                <!-- /#page-content-wrapper -->
+
+            </div>
+            <div class="container">
+                <div class="row">
+
                 <div id="give-post" class="modal fade" role="dialog">
                     <div class="modal-dialog">
                         <button type="button" class="close" aria-label="Close" id="close-give-post">
@@ -295,6 +345,7 @@
                 </div>
             </div>
         </div>
+    </div>
         <div id="learn-content">
             <div class="container">
 

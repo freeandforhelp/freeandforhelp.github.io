@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    homePage();
+    givePage();
     // ask posts
     addEntry("Nick","category-transport","The busses aren't running and I don't have a car","ask");
     addEntry("Sarah","category-shelter","I have no electricity right now","ask");
@@ -20,6 +20,7 @@ function askPage() {
     $(".ask-page").show();
     $("#home-content").hide();
     $("#learn-content").hide();
+    $(window).scrollTop(0);
 }
 
 function givePage() {
@@ -28,6 +29,7 @@ function givePage() {
     $(".give-page").show();
     $("#home-content").hide();
     $("#learn-content").hide();
+    $(window).scrollTop(0);
 }
 
 function homePage() {
@@ -36,6 +38,7 @@ function homePage() {
     $("#give-content").hide();
     $("#home-content").show();
     $("#learn-content").hide();
+    $(window).scrollTop(0);
 }
 
 function learnPage() {
@@ -44,6 +47,7 @@ function learnPage() {
     $("#give-content").hide();
     $("#home-content").hide();
     $("#learn-content").show();
+    $(window).scrollTop(0);
 }
 
 $(".ask-link").click(function() {
@@ -151,10 +155,45 @@ $("#filter-labor").click(function() {
 
 function addEntry(firstName, category, description, askOrGive) {
     if(askOrGive == "ask") {
-        $("#ask-list").prepend(createEntry(firstName, category, description,askOrGive));
+        $("#ask-list").prepend(createCard(firstName, category, description,askOrGive));
     } else {
-        $("#give-list").prepend(createEntry(firstName, category, description,askOrGive));
+        $("#give-list").prepend(createCard(firstName, category, description,askOrGive));
     }
+}
+
+function createCard(firstName, category, description, askOrGive) {
+    var category;
+    if(category == "category-other") {
+        categoryName = "Other";
+    }
+    if(category == "category-transport") {
+        categoryName = "Transportation";
+    }
+    if(category == "category-food-water") {
+        categoryName = "Food/Water";
+    }
+    if(category == "category-shelter") {
+        categoryName = "Shelter";
+    }
+    if(category == "category-labor") {
+        categoryName = "Labor";
+    }
+
+    var newEntry = "";
+    newEntry += "<li class=\"post-card\"><div class=\"card "+category+"\"><div class=\"card-block\"><div class=\"row\">";
+    newEntry += "<div class=\"col-sm-2\">";
+    newEntry += "<img class=\"profpic\" src=\"images\\blank-profile.png\">";
+    newEntry += "</div>";
+    newEntry += "<div class=\"col-sm-7\">";
+    newEntry += "<h4 class=\"card-title\">"+firstName+"</h4>";
+    newEntry += "<h6 class=\"card-subtitle mb-2 text-muted\">needs "+categoryName+"</h6>";
+    newEntry += "<p class=\"card-text\">"+description+"</p>";
+    newEntry += "<p class=\"distance text-muted\">1 mile away</p>";
+    newEntry += "<a class=\"card-link\">Contact "+firstName+"</a>";
+    newEntry += "</div>";
+    newEntry += "</div></div></div></li>";
+
+    return newEntry;
 }
 
 function createEntry(firstName, category, description, askOrGive) {
