@@ -64,11 +64,15 @@ $(".learn-link").click(function() {
 
 $("#submit-give").click(function() {
     addHelp();
+    closeModal();
 })
 
 $("#submit-ask").click(function() {
     addAsk();
+    closeModal();
 })
+
+
 
 $("#nav-wordmark").click(function() {
     homePage();
@@ -80,6 +84,10 @@ function closeModal() {
     $('.modal').removeAttr('padding-left');
     $('.modal-backdrop').remove();
 
+}
+
+function confirmSubmission() {
+    $('.modal').html('<p>Submitted</p>');
 }
 
 $(".close").click(function () {
