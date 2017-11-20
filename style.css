@@ -210,17 +210,17 @@ a:visited { text-decoration: none; color:unset; }
 
 .trending_news_image{
 	width: 75%;
-	height: 150px;
-	margin-left: 12%;
-	margin-right: 15%;
-	margin-top: 5%;
+	/*height: 150px;*/
+	/*margin-left: 12%;*/
+	/*margin-right: 15%;*/
+	/*margin-top: 5%;*/
 	display: inline-block;
 	border: 2px solid black;
 }
 
-.trending_news_image:hover{
+/*.trending_news_image:hover{
 	border: 2.75px solid red;
-}
+}*/
 
 .external_site_text {
 	font-size: 22pt;
