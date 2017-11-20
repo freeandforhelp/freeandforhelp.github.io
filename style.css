@@ -17,10 +17,17 @@ a:visited { text-decoration: none; color:unset; }
 }
 
 .post-header {
-	background:  #9079b9;
 	margin: 0;
 	height: 50px;
-	background:  #f2f2f2;
+}
+
+.profpic {
+	width:100%;
+	padding: 5px;
+}
+
+.card-block {
+	padding: 5px;
 }
 
 .form {
@@ -98,8 +105,6 @@ a:visited { text-decoration: none; color:unset; }
 .post-list li {
 	color: black;
 	margin: 5px;
-	background: #f2f2f2;
-	height: 10em;
 }
 
 #welcome_block {

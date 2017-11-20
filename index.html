@@ -1,339 +1,480 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-   <title id="title">Free and for Help</title>
-   <link rel="stylesheet" type="text/css" href="style.css"/>
-   <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"> -->
 
-   <script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-   <!-- Latest compiled and minified Bootstrap CSS -->
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-   <!-- Optional theme -->
-   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> -->
+    <title id="title">Free and for Help</title>
 
-   <!-- Latest compiled and minified Bootstrap JavaScript -->
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/modern-business.css" rel="stylesheet">
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
+
+    <!-- <link rel="stylesheet" type="text/css" href="style.css"/> -->
+    <!-- Optional theme -->
+
+    <!-- Latest compiled and minified Bootstrap JavaScript -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
 
 </head>
 <body>
+    <div id="give-post"class="modal fade">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Offer Additional Resources</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form" id="give-form">
+                        <form action="#">
+                            <div class="form-group">
+                                <label> First Name:</label>
+                                <input id="give-first-name" class="form-control" type="text" placeholder="First Name">
+                            </div>
+                            <div class="form-group">
+                                <label> Last Name:</label>
+                                <input id="give-last-name" class="form-control" type="text" placeholder="Last Name">
+                            </div>
+                            <div class="form-group">
+                                <label> Street Address:</label>
+                                <input id="give-street-address" class="form-control" type="text" placeholder="Street Address">
+                            </div>
+                            <div class="form-group">
+                                <label> City/Town:</label>
+                                <input id="give-city" class="form-control" type="text" placeholder="City/Town">
+                            </div>
+                            <div class="form-group">
+                                <label> State</label>
+                                <input id="give-state" class="form-control" type="text" placeholder="State">
+                            </div>
+                            <div class="form-group">
+                                <label> Zip Code:</label>
+                                <input id="give-zip" class="form-control" type="number" placeholder="Zip Code">
+                            </div>
+                            <div class="form-group">
+                                <label> Country:</label>
+                                <input id="give-country" class="form-control" type="text" placeholder="Country">
+                            </div>
+                            <div class="form-group">
+                                <label> What do you want to give?</label>
+                                <div class="radio">
+                                    <label><input id="give-cat-food-water" type="radio" name="optradio" value="">Food/Water</label>
+                                </div>
+                                <div class="radio">
+                                    <label><input id="give-cat-shelter" type="radio" name="optradio" value="">Shelter</label>
+                                </div>
+                                <div class="radio">
+                                    <label><input id="give-cat-transport" type="radio" name="optradio" value="">Transportation</label>
+                                </div>
+                                <div class="radio">
+                                    <label><input id="give-cat-labor" type="radio" name="optradio" value="">Labor</label>
+                                </div>
+                                <div class="radio">
+                                    <label><input id="give-cat-other" type="radio" name="optradio" value="">Other</label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="give-description">Description:</label>
+                                    <textarea class="form-control" rows="5" id="give-description"></textarea>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                    <div id="successful-give-submission" style="display:none">
+                        <p> Thank you for offering up help! Your post is now visible on the Ask page. </p>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="submit-give">Submit</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="ask-post"class="modal fade">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form" id="give-form">
+                        <h3> Ask for Additional Resources </h3>
+                        <form action="#">
+                            <div class="form-group">
+                                <label> First Name:</label>
+                                <input id="give-first-name" class="form-control" type="text" placeholder="First Name">
+                            </div>
+                            <div class="form-group">
+                                <label> Last Name:</label>
+                                <input id="give-last-name" class="form-control" type="text" placeholder="Last Name">
+                            </div>
+                            <div class="form-group">
+                                <label> Street Address:</label>
+                                <input id="give-street-address" class="form-control" type="text" placeholder="Street Address">
+                            </div>
+                            <div class="form-group">
+                                <label> City/Town:</label>
+                                <input id="give-city" class="form-control" type="text" placeholder="City/Town">
+                            </div>
+                            <div class="form-group">
+                                <label> State</label>
+                                <input id="give-state" class="form-control" type="text" placeholder="State">
+                            </div>
+                            <div class="form-group">
+                                <label> Zip Code:</label>
+                                <input id="give-zip" class="form-control" type="number" placeholder="Zip Code">
+                            </div>
+                            <div class="form-group">
+                                <label> Country:</label>
+                                <input id="give-country" class="form-control" type="text" placeholder="Country">
+                            </div>
+                            <div class="form-group">
+                                <label> What do you want to give?</label>
+                                <div class="radio">
+                                    <label><input id="give-cat-food-water" type="radio" name="optradio" value="">Food/Water</label>
+                                </div>
+                                <div class="radio">
+                                    <label><input id="give-cat-shelter" type="radio" name="optradio" value="">Shelter</label>
+                                </div>
+                                <div class="radio">
+                                    <label><input id="give-cat-transport" type="radio" name="optradio" value="">Transportation</label>
+                                </div>
+                                <div class="radio">
+                                    <label><input id="give-cat-labor" type="radio" name="optradio" value="">Labor</label>
+                                </div>
+                                <div class="radio">
+                                    <label><input id="give-cat-other" type="radio" name="optradio" value="">Other</label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="give-description">Description:</label>
+                                    <textarea class="form-control" rows="5" id="give-description"></textarea>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div id="successful-ask-submission" style="display:none">
+                        <p> Thank you for offering up help! Your post is now visible on the Give page. </p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="submit-ask">Submit</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Free And For Help</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="home-link nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="give-link nav-link">Give</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="ask-link nav-link">Ask</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="learn-link nav-link">Learn</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <div class="main">
 
-   <nav id="navbar" class="">
-      <a id="nav-wordmark" href="#">
-         <img src="images/question_mark.png" id="nav-logo" class="">
-         <span id="nav-title">Free And For Help</span>
-      </a>
-      <ul class="" id="nav-pages">
-         <a class="home-link">Home</a>
-         <a class="give-link">Give</a>
-         <a class="ask-link">Ask</a>
-         <a class="learn-link">Learn</a>
-      </ul>
-   </nav>
+        <div id="home-content">
+            <header>
+                <div class="carousel-item active" style="background-image: url('https://westsidetoday.com/wp-content/uploads/2017/11/VolunteerHands.png')">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Welcome to Free And For Help</h3>
+                        <p>The world's best way to help and be helped by your community.</p>
+                    </div>
+                </div>
+            </header>
+            <div class="container">
+                <h1 class="my-4">Welcome to Free and For Help</h1>
+                <h2>The world's best way to help and be helped by your community.</h2>
 
-   <div class="container" id="home-content">
-       <div id = "welcome_block" class = "jumbotron jumbotron-fluid">
-       		<div class = "container">
-       			<h1 class = "display-3">Welcome to Free and for Help </h1>
-       			<p class = "lead"> The world's best way to help and be helped by your community. Learn more about our story below.</p>
-       		</div>
-       </div>
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6 portfolio-item">
+                        <div class="card h-100">
+                            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    <a class="ask-link">Ask</a>
+                                </h4>
+                                <p class="card-text">for help with a need, resource, or time from your community.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 portfolio-item">
+                        <div class="card h-100">
+                            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    <a class="give-link">Give</a>
+                                </h4>
+                                <p class="card-text">your time or your resources to a community member in need.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 portfolio-item">
+                        <div class="card h-100">
+                            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    <a class="learn-link">Learn</a>
+                                </h4>
+                                <p class="card-text">about events and needs in your community and how you can help.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-       <div class = "content-block">
-       		<h1 style = "font-size:25pt; text-align: center; width: 90%;">What are you looking to do? Click below! </h1>
+                <hr>
 
-    	<div class = "content_block_wrapper">
-       		<div class = "content_block_element">
-       			<a class="ask-link">
-       				<div class = "content_block_name"> ASK </div>
-       			</a>
-
-       			<div class = "content_block_description"> For help with a need, resource, or time from your community.  </div>
-       		</div>
-
-
-       		<div class = "content_block_element">
-       			<a class="give-link">
-       				<div class = "content_block_name"> GIVE </div>
-       			</a>
-       			<div class = "content_block_description"> Your time or your resources to a community member in need. </div>
-       		</div>
-
-       		<div class = "content_block_element">
-       			<a class= "learn-link">
-       				<div class = "content_block_name"> LEARN </div>
-       			</a>
-       			<div class = "content_block_description"> About events and needs in your community and how you can help. </div>
-       		</div>
-       	</div>
-
-       </div>
-
-       <div id = "about_us_block" class = "jumbotron jumbotron-fluid">
-       	<div class = "container">
-       		<h2 class = "display-3"> About Us </h4>
-       		<p class = "lead"> We are a web service designed to connect individuals in the aftermath of natural disasters and other emergencies. We hope to connect individual members of the community with each other to facilitate the exchange of essential goods and resources. </p>
-       	</div>
-       </div>
-   </div>
-   <div class="container" id="post-content">
-      <div class="row">
-         <div class="col-lg-3 post-content-container left-panel">
-            <input type="text" name="search" placeholder="Search..">
-			<div class="form-group">
-				<h3> Filter</h3>
-				<div class="form-check">
-					<label class="form-check-label">
-						<input class="form-check-input" id="filter-food-water" type="checkbox" value="">
-						Food/Water
-					</label>
-				</div>
-				<div class="form-check">
-					<label class="form-check-label">
-						<input class="form-check-input" id="filter-shelter" type="checkbox" value="">
-						Shelter
-					</label>
-				</div>
-				<div class="form-check">
-					<label class="form-check-label">
-						<input class="form-check-input" id="filter-transport" type="checkbox" value="">
-						Transportation
-					</label>
-				</div>
-				<div class="form-check">
-					<label class="form-check-label">
-						<input class="form-check-input" id="filter-labor" type="checkbox" value="">
-						Labor
-					</label>
-				</div>
-			</div>
-     	</div>
-         <div class="col-lg-6 post-content-container middle-panel">
-             <div class="post-header">
-                 <h2 class="give-page">People Looking for Help</h2>
-                 <h2 class="ask-page">People Offering Help</h2>
-             </div>
-             <div class="post-content-scroller">
-                 <ul class="post-list give-page" id="ask-list">
-
-                 </ul>
-			    <ul class="post-list ask-page" id="give-list">
-
-			    </ul>
             </div>
-         </div>
-         <div class="col-lg-3 post-content-container right-panel">
-            <h3 class="give-page">Have Something Else To Offer?</h3>
-			<h3 class="ask-page">Do You Need Something Else?</h3>
-            <button type="button" class="btn btn-info btn-lg give-page"
-            data-toggle="modal" data-target="#give-post"> Give! </button>
-			<button type="button" class="btn btn-info btn-lg ask-page"
-			data-toggle="modal" data-target="#ask-post"> Ask! </button>
-
-         </div>
-      </div>
-      <div id="give-post" class="modal fade" role="dialog">
-          <div class="modal-dialog">
-			  <button type="button" class="close" aria-label="Close" id="close-give-post">
-  		 		<span aria-hidden="true">&times;</span>
-	  			</button>
-              <div class="form" id="give-form">
-                  <h3> Fill Out This Form To Offer Additional Resources </h3>
-                  <form action="#">
-                      <div class="form-group">
-                          <label> First Name:</label>
-                          <input id="give-first-name" class="form-control" type="text" placeholder="First Name">
-                      </div>
-                      <div class="form-group">
-                          <label> Last Name:</label>
-                          <input id="give-last-name" class="form-control" type="text" placeholder="Last Name">
-                      </div>
-                      <div class="form-group">
-                          <label> Street Address:</label>
-                          <input id="give-street-address" class="form-control" type="text" placeholder="Street Address">
-                      </div>
-                      <div class="form-group">
-                          <label> City/Town:</label>
-                          <input id="give-city" class="form-control" type="text" placeholder="City/Town">
-                      </div>
-                      <div class="form-group">
-                          <label> State</label>
-                          <input id="give-state" class="form-control" type="text" placeholder="State">
-                      </div>
-                      <div class="form-group">
-                          <label> Zip Code:</label>
-                          <input id="give-zip" class="form-control" type="number" placeholder="Zip Code">
-                      </div>
-                      <div class="form-group">
-                          <label> Country:</label>
-                          <input id="give-country" class="form-control" type="number" placeholder="Country">
-                      </div>
-                      <div class="form-group">
-                          <label> What do you want to give?</label>
-                      <div class="radio">
-                          <label><input id="give-cat-food-water" type="radio" name="optradio" value="">Food/Water</label>
-                      </div>
-                      <div class="radio">
-                          <label><input id="give-cat-shelter" type="radio" name="optradio" value="">Shelter</label>
-                      </div>
-                      <div class="radio">
-                          <label><input id="give-cat-transport" type="radio" name="optradio" value="">Transportation</label>
-                      </div>
-                      <div class="radio">
-                          <label><input id="give-cat-labor" type="radio" name="optradio" value="">Labor</label>
-                      </div>
-                      <div class="radio">
-                          <label><input id="give-cat-other" type="radio" name="optradio" value="">Other</label>
-                      </div>
-                      <div class="form-group">
-                          <label for="give-description">Description:</label>
-                          <textarea class="form-control" rows="5" id="give-description"></textarea>
-                      </div>
-                  </div>
-
-
-                     <p>
-                     <button type="button" class="submit" id="submit-give"> Submit </button>
-                    </p>
-                  </form>
-              </div>
-          </div>
         </div>
-	  <div id="ask-post" class="modal fade" role="dialog">
-             <div class="modal-dialog">
-				 <button type="button" class="close" aria-label="Close" id="close-ask-post">
-     		 		<span aria-hidden="true">&times;</span>
-   	  			</button>
-                 <div class="form" id="ask-form">
-                     <h3> Fill Out This Form To Request Additional Resources </h3>
-                     <form action="#">
-                         <div class="form-group">
-                             <label> First Name:</label>
-                             <input class="form-control" type="text" placeholder="First Name">
-                         </div>
-                         <div class="form-group">
-                             <label> Last Name:</label>
-                             <input class="form-control" type="text" placeholder="Last Name">
-                         </div>
-                         <div class="form-group">
-                             <label> Street Address:</label>
-                             <input class="form-control" type="text" placeholder="Street Address">
-                         </div>
-                         <div class="form-group">
-                             <label> City/Town:</label>
-                             <input class="form-control" type="text" placeholder="City/Town">
-                         </div>
-                         <div class="form-group">
-                             <label> State</label>
-                             <input class="form-control" type="text" placeholder="State">
-                         </div>
-                         <div class="form-group">
-                             <label> Zip Code:</label>
-                             <input class="form-control" type="number" placeholder="Zip Code">
-                         </div>
-                         <div class="form-group">
-                             <label> Country:</label>
-                             <input class="form-control" type="number" placeholder="Country">
-                         </div>
-                         <div class="form-group">
-                             <label> What do you want to give?</label>
-                         <div class="checkbox">
-                             <label><input type="checkbox" value="">Food/Water</label>
-                         </div>
-                         <div class="checkbox">
-                             <label><input type="checkbox" value="">Shelter</label>
-                         </div>
-                         <div class="checkbox">
-                             <label><input type="checkbox" value="">Transportation</label>
-                         </div>
-                         <div class="checkbox">
-                             <label><input type="checkbox" value="">Labor</label>
-                         </div>
-                         <div class="checkbox">
-                             <label><input type="checkbox" value="">Other</label>
-                         </div>
-                         <div class="form-group">
-                             <label for="comment">Description:</label>
-                             <textarea class="form-control" rows="5" id="comment"></textarea>
-                         </div>
-                     </div>
+        <div id="post-content">
+            <div id="wrapper">
+
+                <!-- Sidebar -->
+                <div id="sidebar-wrapper">
+
+                    <ul class="sidebar-nav">
+                        <li class="sidebar-brand">
+                            Filter
+                        </li>
+                        <li>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" id="filter-food-water" type="checkbox" value="">
+                                    Food/Water
+                                </label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" id="filter-shelter" type="checkbox" value="">
+                                    Shelter
+                                </label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" id="filter-transport" type="checkbox" value="">
+                                    Transportation
+                                </label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" id="filter-labor" type="checkbox" value="">
+                                    Labor
+                                </label>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </div>
+                <!-- /#sidebar-wrapper -->
+
+                <!-- Page Content -->
+                <div class="row" id="page-content-wrapper">
+                    <div class="col-lg-8 post-content-container middle-panel">
+                        <div class="post-header">
+                            <h2 class="give-page">People Looking for Help</h2>
+                            <h2 class="ask-page">People Offering Help</h2>
+                        </div>
+                        <div class="post-content-scroller">
+                            <ul class="post-list give-page" id="ask-list">
+
+                            </ul>
+                            <ul class="post-list ask-page" id="give-list">
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class='col-lg-4'>
+
+                        <h3 class="question give-page">Have Something Else To Offer?</h3>
+                        <h3 class="question ask-page">Do You Need Something Else?</h3>
+                        <button type="button" class="btn btn-info btn-lg give-page"
+                        data-toggle="modal" data-target="#give-post"> Give! </button>
+                        <button type="button" class="btn btn-info btn-lg ask-page"
+                        data-toggle="modal" data-target="#ask-post"> Ask! </button>
+
+                    </div>
+                </div>
+                <!-- /#page-content-wrapper -->
 
 
-                        <p>
-                        <button type="button" class="submit" id="submit-ask"> Submit </button>
-                       </p>
-                     </form>
-                 </div>
-             </div>
-         </div>
-	 </div>
-     <div class="container" id="learn-content">
-         <div class = "resource_container"> 
-          <div class = "resource_title_text"> <b> Trending News </b></div>
-      
-          <div class = "trending_news_element"> 
-          <div class = "trending_news_text"> <b>NY Times </b></div>
-          <a href = "https://www.nytimes.com/2017/09/19/world/americas/mexico-earthquake.html">
-              <img class = "trending_news_image" src = "images/mexicocity.png"> 
-          </a>
-          <div class = "trending_news_title_text"> <i> Mexico Earthquake Kills Hundreds, Trappings Many Under Rubble </i> </div>
-        </div>
 
-        <div class = "trending_news_element"> 
-          <div class = "trending_news_text"><b>Fox News </b></div>
-          <a href = "http://www.foxnews.com/us/2017/11/12/latest-texas-town-holds-1st-service-since-church-attack.html">
-              <img class = "trending_news_image" src = "images/foxnews.jpg"> 
-          </a>
-          <div class = "trending_news_title_text"><i> The Latest: Church Opens for first time since Shooting </i> </div>
-        </div>
-      
-        <div class = "trending_news_element"> 
-          <div class = "trending_news_text"><b>CNN </b></div>
-          <a href = "http://www.cnn.com/specials/hurricane-irma">
-            <img class = "trending_news_image" src = "images/cnn.jpg"> 
-          </a>
-          <div class = "trending_news_title_text"> <i> Irma: A Hurricane for the History Books </i> </div>
-        </div>
+                <!-- /#page-content-wrapper -->
+
+            </div>
+
     </div>
+        <div id="learn-content">
+            <div class="container">
 
-    <div class = "resource_container">
-      <div class = "resource_title_text"> <b> External Donation Sites </b></div>
+                <!-- Page Heading/Breadcrumbs -->
+                <h1 class="mt-4 mb-3">Learn
+                    <small></small>
+                </h1>
 
-      <ol> 
-        <li class = "external_site_text"> 
-            <a href = "http://www.redcross.org/give-blood"> Red Cross </a>
-        </li>
-        <li class = "external_site_text"> 
-            <a href = "http://www.theherofoundation.org"/> Heroin Epidemic Relief Organization </a>
-        </li>
-        
-        <li class = "external_site_text"> 
-            <a href = "https://www.gofundme.com/"> GoFundMe</a>
-        </li>
-      </ol>
+                <!-- Image Header -->
+                <img class="img-fluid rounded mb-4" src="http://placehold.it/1200x300" alt="">
+
+                <!-- Marketing Icons Section -->
+                <h1 class="mt-4 mb-3">
+                    <small>Trending News</small>
+                </h1>
+                <div class="row">
+                    <div class="col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <h4 class="card-header">NY Times</h4>
+                            <div class="card-body">
+                                <p class="card-text">Mexico Earthquake Kills Hundreds, Trappings Many Under Rubble.</p>
+                                <img style = "width: 100%" class = "trending_news_image" src = "images/mexicocity.png">
+                            </div>
+                            <div class="card-footer">
+                                <a href="https://www.nytimes.com/2017/09/19/world/americas/mexico-earthquake.html" class="btn btn-primary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <h4 class="card-header">Fox News</h4>
+                            <div class="card-body">
+                                <p class="card-text">The Latest: Church Opens for first time since Shooting</p>
+                                <img style = "width: 100%" class = "trending_news_image" src = "images/foxnews.jpg">
+                            </div>
+                            <div class="card-footer">
+                                <a href="http://www.foxnews.com/us/2017/11/12/latest-texas-town-holds-1st-service-since-church-attack.html" class="btn btn-primary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <h4 class="card-header">CNN</h4>
+                            <div class="card-body">
+                                <p class="card-text">Irma: A Hurricane for the History Books</p>
+                                <img style = "width: 100%" class = "trending_news_image" src = "images/cnn.jpg">
+                            </div>
+                            <div class="card-footer">
+                                <a href="http://www.cnn.com/specials/hurricane-irma" class="btn btn-primary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+
+                <h1 class="mt-4 mb-3">
+                    <small>External Donation Sites</small>
+                </h1>
+
+                <hr>
+
+                <div class="row">
+                    <div class="col-md-7">
+                        <a href="#">
+                            <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/700x300" alt="">
+                        </a>
+                    </div>
+                    <div class="col-md-5">
+                        <h3>Red Cross: Blood Drives</h3>
+                        <p>The Red Cross organizes blood drives across the country. Click the link to find the drive nearest to you and donate your blood to those in need today.</p>
+                        <a class="btn btn-primary" href="http://www.redcross.org/give-blood">Donate Today
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </a>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="row">
+                    <div class="col-md-7">
+                        <a href="#">
+                            <img class="img-fluid rounded mb-3 mb-md-0" src="images/HERO-Logo.png" alt="">
+                        </a>
+                    </div>
+                    <div class="col-md-5">
+                        <h3>Heroin Epidemic Relief Organization</h3>
+                        <p>We are the Heroin Epidemic Relief Organization. Our mission is to stop the growing heroin/opioid epidemic that has rapidly swept across our nation through our own programs and by supporting strategic pieces of legislation all while providing comfort and support to those who have lost a loved one to heroin/opioid or are currently helping a loved one who is struggling with this deadly disease.</p>
+                        <a class="btn btn-primary" href="http://www.theherofoundation.org">Donate Today
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </a>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="row">
+                    <div class="col-md-7">
+                        <a href="#">
+                            <img class="img-fluid rounded mb-3 mb-md-0" src="images/GoFundMe-Logo.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="col-md-5">
+                        <h3>GoFundMe: Emergency Fundraising</h3>
+                        <p>GoFundMe has many opportunities to people to donate to one another. Their Emergency Accident Fundrasising campaigns are most aligned with Free and For Help's mission statement. Check out those campaigns and see how you can give back.</p>
+                        <a class="btn btn-primary" href="https://www.gofundme.com/emergency-accident-fundraising">Donate Today
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </a>
+                    </div>
+                </div>
+
+                <hr>
+
+            </div>
+            <!-- /.container -->
+
+        </div>
+
+
+
     </div>
-
-    <div class = "resource_container">
-      <div class = "resource_title_text"> <b>Major Event Spotlight </b> </div>
-
-      <div class = "spotlight_title_text"> Hurricane Maria </div>
-
-      <div class = "spotlight_body_text"> Forming on September 16, 2017, Hurricane Maria is regarded as one of the worst natural disasters on record. It has caused millions of dollars worth of damage and has claimed the ives of many. Please help the communities of the Caribbean by donating money or resources to help the rebuilding process. </div>
-
-      </div>
-     </div>
-
-
-
-   </div>
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-   <script src="script.js"></script>
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+        </div>
+        <!-- /.container -->
+    </footer>
+<!-- scripts -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 
 </body>
 </html>
