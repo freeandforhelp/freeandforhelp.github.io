@@ -25,7 +25,222 @@
 
 </head>
 <body>
+    <div id="give-post"class="modal fade">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form" id="give-form">
+                        <h3> Fill Out This Form To Offer Additional Resources </h3>
+                        <form action="#">
+                            <div class="form-group">
+                                <label> First Name:</label>
+                                <input id="give-first-name" class="form-control" type="text" placeholder="First Name">
+                            </div>
+                            <div class="form-group">
+                                <label> Last Name:</label>
+                                <input id="give-last-name" class="form-control" type="text" placeholder="Last Name">
+                            </div>
+                            <div class="form-group">
+                                <label> Street Address:</label>
+                                <input id="give-street-address" class="form-control" type="text" placeholder="Street Address">
+                            </div>
+                            <div class="form-group">
+                                <label> City/Town:</label>
+                                <input id="give-city" class="form-control" type="text" placeholder="City/Town">
+                            </div>
+                            <div class="form-group">
+                                <label> State</label>
+                                <input id="give-state" class="form-control" type="text" placeholder="State">
+                            </div>
+                            <div class="form-group">
+                                <label> Zip Code:</label>
+                                <input id="give-zip" class="form-control" type="number" placeholder="Zip Code">
+                            </div>
+                            <div class="form-group">
+                                <label> Country:</label>
+                                <input id="give-country" class="form-control" type="text" placeholder="Country">
+                            </div>
+                            <div class="form-group">
+                                <label> What do you want to give?</label>
+                                <div class="radio">
+                                    <label><input id="give-cat-food-water" type="radio" name="optradio" value="">Food/Water</label>
+                                </div>
+                                <div class="radio">
+                                    <label><input id="give-cat-shelter" type="radio" name="optradio" value="">Shelter</label>
+                                </div>
+                                <div class="radio">
+                                    <label><input id="give-cat-transport" type="radio" name="optradio" value="">Transportation</label>
+                                </div>
+                                <div class="radio">
+                                    <label><input id="give-cat-labor" type="radio" name="optradio" value="">Labor</label>
+                                </div>
+                                <div class="radio">
+                                    <label><input id="give-cat-other" type="radio" name="optradio" value="">Other</label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="give-description">Description:</label>
+                                    <textarea class="form-control" rows="5" id="give-description"></textarea>
+                                </div>
+                            </div>
 
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="submit-give">Submit</button>
+                    <button type="button" class="btn btn-secondary">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="ask-post"class="modal fade">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form" id="give-form">
+                        <h3> Fill Out This Form To Offer Additional Resources </h3>
+                        <form action="#">
+                            <div class="form-group">
+                                <label> First Name:</label>
+                                <input id="give-first-name" class="form-control" type="text" placeholder="First Name">
+                            </div>
+                            <div class="form-group">
+                                <label> Last Name:</label>
+                                <input id="give-last-name" class="form-control" type="text" placeholder="Last Name">
+                            </div>
+                            <div class="form-group">
+                                <label> Street Address:</label>
+                                <input id="give-street-address" class="form-control" type="text" placeholder="Street Address">
+                            </div>
+                            <div class="form-group">
+                                <label> City/Town:</label>
+                                <input id="give-city" class="form-control" type="text" placeholder="City/Town">
+                            </div>
+                            <div class="form-group">
+                                <label> State</label>
+                                <input id="give-state" class="form-control" type="text" placeholder="State">
+                            </div>
+                            <div class="form-group">
+                                <label> Zip Code:</label>
+                                <input id="give-zip" class="form-control" type="number" placeholder="Zip Code">
+                            </div>
+                            <div class="form-group">
+                                <label> Country:</label>
+                                <input id="give-country" class="form-control" type="text" placeholder="Country">
+                            </div>
+                            <div class="form-group">
+                                <label> What do you want to give?</label>
+                                <div class="radio">
+                                    <label><input id="give-cat-food-water" type="radio" name="optradio" value="">Food/Water</label>
+                                </div>
+                                <div class="radio">
+                                    <label><input id="give-cat-shelter" type="radio" name="optradio" value="">Shelter</label>
+                                </div>
+                                <div class="radio">
+                                    <label><input id="give-cat-transport" type="radio" name="optradio" value="">Transportation</label>
+                                </div>
+                                <div class="radio">
+                                    <label><input id="give-cat-labor" type="radio" name="optradio" value="">Labor</label>
+                                </div>
+                                <div class="radio">
+                                    <label><input id="give-cat-other" type="radio" name="optradio" value="">Other</label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="give-description">Description:</label>
+                                    <textarea class="form-control" rows="5" id="give-description"></textarea>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="submit-ask">Submit</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="ask-post" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <button type="button" class="close" aria-label="Close" id="close-give-post">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="form" id="give-form">
+                <h3> Fill Out This Form To Offer Additional Resources </h3>
+                <form action="#">
+                    <div class="form-group">
+                        <label> First Name:</label>
+                        <input id="give-first-name" class="form-control" type="text" placeholder="First Name">
+                    </div>
+                    <div class="form-group">
+                        <label> Last Name:</label>
+                        <input id="give-last-name" class="form-control" type="text" placeholder="Last Name">
+                    </div>
+                    <div class="form-group">
+                        <label> Street Address:</label>
+                        <input id="give-street-address" class="form-control" type="text" placeholder="Street Address">
+                    </div>
+                    <div class="form-group">
+                        <label> City/Town:</label>
+                        <input id="give-city" class="form-control" type="text" placeholder="City/Town">
+                    </div>
+                    <div class="form-group">
+                        <label> State</label>
+                        <input id="give-state" class="form-control" type="text" placeholder="State">
+                    </div>
+                    <div class="form-group">
+                        <label> Zip Code:</label>
+                        <input id="give-zip" class="form-control" type="number" placeholder="Zip Code">
+                    </div>
+                    <div class="form-group">
+                        <label> Country:</label>
+                        <input id="give-country" class="form-control" type="text" placeholder="Country">
+                    </div>
+                    <div class="form-group">
+                        <label> What do you want to give?</label>
+                        <div class="radio">
+                            <label><input id="give-cat-food-water" type="radio" name="optradio" value="">Food/Water</label>
+                        </div>
+                        <div class="radio">
+                            <label><input id="give-cat-shelter" type="radio" name="optradio" value="">Shelter</label>
+                        </div>
+                        <div class="radio">
+                            <label><input id="give-cat-transport" type="radio" name="optradio" value="">Transportation</label>
+                        </div>
+                        <div class="radio">
+                            <label><input id="give-cat-labor" type="radio" name="optradio" value="">Labor</label>
+                        </div>
+                        <div class="radio">
+                            <label><input id="give-cat-other" type="radio" name="optradio" value="">Other</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="give-description">Description:</label>
+                            <textarea class="form-control" rows="5" id="give-description"></textarea>
+                        </div>
+                    </div>
+
+
+                    <p>
+                        <button type="button" class="submit" id="submit-give"> Submit </button>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
@@ -148,23 +363,14 @@
                                 </label>
                             </div>
                         </li>
-                        <li>
-                            <div>
-                            <h3 class="question give-page">Have Something Else To Offer?</h3>
-                            <h3 class="question ask-page">Do You Need Something Else?</h3>
-                            <button type="button" class="btn btn-info btn-lg give-page"
-                            data-toggle="modal" data-target="#give-post"> Give! </button>
-                            <button type="button" class="btn btn-info btn-lg ask-page"
-                            data-toggle="modal" data-target="#ask-post"> Ask! </button>
-                        </div>
-                        </li>
+
                     </ul>
 
                 </div>
                 <!-- /#sidebar-wrapper -->
 
                 <!-- Page Content -->
-                <div id="page-content-wrapper">
+                <div class="row" id="page-content-wrapper">
                     <div class="col-lg-8 post-content-container middle-panel">
                         <div class="post-header">
                             <h2 class="give-page">People Looking for Help</h2>
@@ -198,6 +404,16 @@
                             </ul>
                         </div>
                     </div>
+                    <div class='col-lg-4'>
+
+                        <h3 class="question give-page">Have Something Else To Offer?</h3>
+                        <h3 class="question ask-page">Do You Need Something Else?</h3>
+                        <button type="button" class="btn btn-info btn-lg give-page"
+                        data-toggle="modal" data-target="#give-post"> Give! </button>
+                        <button type="button" class="btn btn-info btn-lg ask-page"
+                        data-toggle="modal" data-target="#ask-post"> Ask! </button>
+
+                    </div>
                 </div>
                 <!-- /#page-content-wrapper -->
 
@@ -206,145 +422,7 @@
                 <!-- /#page-content-wrapper -->
 
             </div>
-            <div class="container">
-                <div class="row">
 
-                <div id="give-post" class="modal fade" role="dialog">
-                    <div class="modal-dialog">
-                        <button type="button" class="close" aria-label="Close" id="close-give-post">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                        <div class="form" id="give-form">
-                            <h3> Fill Out This Form To Offer Additional Resources </h3>
-                            <form action="#">
-                                <div class="form-group">
-                                    <label> First Name:</label>
-                                    <input id="give-first-name" class="form-control" type="text" placeholder="First Name">
-                                </div>
-                                <div class="form-group">
-                                    <label> Last Name:</label>
-                                    <input id="give-last-name" class="form-control" type="text" placeholder="Last Name">
-                                </div>
-                                <div class="form-group">
-                                    <label> Street Address:</label>
-                                    <input id="give-street-address" class="form-control" type="text" placeholder="Street Address">
-                                </div>
-                                <div class="form-group">
-                                    <label> City/Town:</label>
-                                    <input id="give-city" class="form-control" type="text" placeholder="City/Town">
-                                </div>
-                                <div class="form-group">
-                                    <label> State</label>
-                                    <input id="give-state" class="form-control" type="text" placeholder="State">
-                                </div>
-                                <div class="form-group">
-                                    <label> Zip Code:</label>
-                                    <input id="give-zip" class="form-control" type="number" placeholder="Zip Code">
-                                </div>
-                                <div class="form-group">
-                                    <label> Country:</label>
-                                    <input id="give-country" class="form-control" type="text" placeholder="Country">
-                                </div>
-                                <div class="form-group">
-                                    <label> What do you want to give?</label>
-                                    <div class="radio">
-                                        <label><input id="give-cat-food-water" type="radio" name="optradio" value="">Food/Water</label>
-                                    </div>
-                                    <div class="radio">
-                                        <label><input id="give-cat-shelter" type="radio" name="optradio" value="">Shelter</label>
-                                    </div>
-                                    <div class="radio">
-                                        <label><input id="give-cat-transport" type="radio" name="optradio" value="">Transportation</label>
-                                    </div>
-                                    <div class="radio">
-                                        <label><input id="give-cat-labor" type="radio" name="optradio" value="">Labor</label>
-                                    </div>
-                                    <div class="radio">
-                                        <label><input id="give-cat-other" type="radio" name="optradio" value="">Other</label>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="give-description">Description:</label>
-                                        <textarea class="form-control" rows="5" id="give-description"></textarea>
-                                    </div>
-                                </div>
-
-
-                                <p>
-                                    <button type="button" class="submit" id="submit-give"> Submit </button>
-                                </p>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div id="ask-post" class="modal fade" role="dialog">
-                    <div class="modal-dialog">
-                        <button type="button" class="close" aria-label="Close" id="close-ask-post">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                        <div class="form" id="ask-form">
-                            <h3> Fill Out This Form To Request Additional Resources </h3>
-                            <form action="#">
-                                <div class="form-group">
-                                    <label> First Name:</label>
-                                    <input class="form-control" type="text" placeholder="First Name">
-                                </div>
-                                <div class="form-group">
-                                    <label> Last Name:</label>
-                                    <input class="form-control" type="text" placeholder="Last Name">
-                                </div>
-                                <div class="form-group">
-                                    <label> Street Address:</label>
-                                    <input class="form-control" type="text" placeholder="Street Address">
-                                </div>
-                                <div class="form-group">
-                                    <label> City/Town:</label>
-                                    <input class="form-control" type="text" placeholder="City/Town">
-                                </div>
-                                <div class="form-group">
-                                    <label> State</label>
-                                    <input class="form-control" type="text" placeholder="State">
-                                </div>
-                                <div class="form-group">
-                                    <label> Zip Code:</label>
-                                    <input class="form-control" type="number" placeholder="Zip Code">
-                                </div>
-                                <div class="form-group">
-                                    <label> Country:</label>
-                                    <input class="form-control" type="text" placeholder="Country">
-                                </div>
-                                <div class="form-group">
-                                    <label> What do you want to give?</label>
-                                    <div class="checkbox">
-                                        <label><input type="checkbox" value="">Food/Water</label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label><input type="checkbox" value="">Shelter</label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label><input type="checkbox" value="">Transportation</label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label><input type="checkbox" value="">Labor</label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label><input type="checkbox" value="">Other</label>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="comment">Description:</label>
-                                        <textarea class="form-control" rows="5" id="comment"></textarea>
-                                    </div>
-                                </div>
-
-
-                                <p>
-                                    <button type="button" class="submit" id="submit-ask"> Submit </button>
-                                </p>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
         <div id="learn-content">
             <div class="container">

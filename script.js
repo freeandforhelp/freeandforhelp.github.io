@@ -68,12 +68,12 @@ $(".learn-link").click(function() {
 
 $("#submit-give").click(function() {
     addHelp();
-    closeModal();
+    // closeModal();
 })
 
 $("#submit-ask").click(function() {
     addAsk();
-    closeModal();
+    // closeModal();
 })
 
 
@@ -253,7 +253,7 @@ function addHelp() {
         category = "category-shelter";
     }
 
-    var newEntry = createEntry(firstName, category, description, "give");
+    var newEntry = createCard(firstName, category, description, "give");
     // newEntry += "<li class=\""+category+"\"> <h4> <b class=\"name\">" + firstName + "</b>";
     // newEntry += " offers <b class=\"category\">" + categoryName + "</b></h4>";
     // newEntry += "<p class=\"description\">" + description + "</p></li>";
@@ -284,7 +284,7 @@ function addAsk() {
         category = "category-shelter";
     }
 
-    var newEntry = createEntry(firstName, category, description, "ask");
+    var newEntry = createCard(firstName, category, description, "ask");
     // newEntry += "<li class=\""+category+"\"> <h4> <b class=\"name\">" + firstName + "</b>";
     // newEntry += " offers <b class=\"category\">" + categoryName + "</b></h4>";
     // newEntry += "<p class=\"description\">" + description + "</p></li>";
