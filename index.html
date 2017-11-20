@@ -29,14 +29,13 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Modal title</h5>
+                    <h5 class="modal-title">Offer Additional Resources</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
                     <div class="form" id="give-form">
-                        <h3> Fill Out This Form To Offer Additional Resources </h3>
                         <form action="#">
                             <div class="form-group">
                                 <label> First Name:</label>
@@ -91,10 +90,14 @@
 
                         </form>
                     </div>
+                    <div id="successful-give-submission" style="display:none">
+                        <p> Thank you for offering up help! Your post is now visible on the Ask page. </p>
+                    </div>
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" id="submit-give">Submit</button>
-                    <button type="button" class="btn btn-secondary">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
@@ -110,7 +113,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="form" id="give-form">
-                        <h3> Fill Out This Form To Offer Additional Resources </h3>
+                        <h3> Ask for Additional Resources </h3>
                         <form action="#">
                             <div class="form-group">
                                 <label> First Name:</label>
@@ -164,6 +167,9 @@
                             </div>
                         </form>
                     </div>
+                    <div id="successful-ask-submission" style="display:none">
+                        <p> Thank you for offering up help! Your post is now visible on the Give page. </p>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" id="submit-ask">Submit</button>
@@ -174,73 +180,6 @@
     </div>
 
 
-    <div id="ask-post" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <button type="button" class="close" aria-label="Close" id="close-give-post">
-                <span aria-hidden="true">&times;</span>
-            </button>
-            <div class="form" id="give-form">
-                <h3> Fill Out This Form To Offer Additional Resources </h3>
-                <form action="#">
-                    <div class="form-group">
-                        <label> First Name:</label>
-                        <input id="give-first-name" class="form-control" type="text" placeholder="First Name">
-                    </div>
-                    <div class="form-group">
-                        <label> Last Name:</label>
-                        <input id="give-last-name" class="form-control" type="text" placeholder="Last Name">
-                    </div>
-                    <div class="form-group">
-                        <label> Street Address:</label>
-                        <input id="give-street-address" class="form-control" type="text" placeholder="Street Address">
-                    </div>
-                    <div class="form-group">
-                        <label> City/Town:</label>
-                        <input id="give-city" class="form-control" type="text" placeholder="City/Town">
-                    </div>
-                    <div class="form-group">
-                        <label> State</label>
-                        <input id="give-state" class="form-control" type="text" placeholder="State">
-                    </div>
-                    <div class="form-group">
-                        <label> Zip Code:</label>
-                        <input id="give-zip" class="form-control" type="number" placeholder="Zip Code">
-                    </div>
-                    <div class="form-group">
-                        <label> Country:</label>
-                        <input id="give-country" class="form-control" type="text" placeholder="Country">
-                    </div>
-                    <div class="form-group">
-                        <label> What do you want to give?</label>
-                        <div class="radio">
-                            <label><input id="give-cat-food-water" type="radio" name="optradio" value="">Food/Water</label>
-                        </div>
-                        <div class="radio">
-                            <label><input id="give-cat-shelter" type="radio" name="optradio" value="">Shelter</label>
-                        </div>
-                        <div class="radio">
-                            <label><input id="give-cat-transport" type="radio" name="optradio" value="">Transportation</label>
-                        </div>
-                        <div class="radio">
-                            <label><input id="give-cat-labor" type="radio" name="optradio" value="">Labor</label>
-                        </div>
-                        <div class="radio">
-                            <label><input id="give-cat-other" type="radio" name="optradio" value="">Other</label>
-                        </div>
-                        <div class="form-group">
-                            <label for="give-description">Description:</label>
-                            <textarea class="form-control" rows="5" id="give-description"></textarea>
-                        </div>
-                    </div>
-
-
-                    <p>
-                        <button type="button" class="submit" id="submit-give"> Submit </button>
-                    </p>
-                </form>
-            </div>
-        </div>
-    </div>
 
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
@@ -378,25 +317,6 @@
                         </div>
                         <div class="post-content-scroller">
                             <ul class="post-list give-page" id="ask-list">
-                                <li class="post-card">
-                                <div class="card">
-                                    <div class="card-block">
-                                        <div class="row">
-                                            <div class="col-sm-2">
-                                                <img class="profpic" src="images\blank-profile.png">
-                                            </div>
-                                            <div class="col-sm-10">
-                                                <h4 class="card-title">Jennie</h4>
-                                                <h6 class="card-subtitle mb-2 text-muted">needs Water</h6>
-                                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                                <p class="distance text-muted">1 mile away</p>
-                                                <a href="#" class="card-link">Contact Jennie</a>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
 
                             </ul>
                             <ul class="post-list ask-page" id="give-list">

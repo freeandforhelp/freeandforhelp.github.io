@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    givePage();
+    homePage();
     // ask posts
     addEntry("Nick","category-transport","The busses aren't running and I don't have a car","ask");
     addEntry("Sarah","category-shelter","I have no electricity right now","ask");
@@ -68,11 +68,18 @@ $(".learn-link").click(function() {
 
 $("#submit-give").click(function() {
     addHelp();
+    $("#give-form").hide();
+    $("#successful-give-submission").show();
+    $("#submit-give").hide();
     // closeModal();
 })
 
 $("#submit-ask").click(function() {
     addAsk();
+    $("#ask-form").hide();
+    $("#successful-ask-submission").show();
+    $("#submit-ask").hide();
+
     // closeModal();
 })
 
@@ -189,8 +196,9 @@ function createCard(firstName, category, description, askOrGive) {
     newEntry += "<h6 class=\"card-subtitle mb-2 text-muted\">needs "+categoryName+"</h6>";
     newEntry += "<p class=\"card-text\">"+description+"</p>";
     newEntry += "<p class=\"distance text-muted\">1 mile away</p>";
-    newEntry += "<a class=\"card-link\">Contact "+firstName+"</a>";
     newEntry += "</div>";
+    newEntry += "<div class=\"col-sm-3\">";
+    newEntry += "<button>Contact "+firstName+"</button>";
     newEntry += "</div></div></div></li>";
 
     return newEntry;
