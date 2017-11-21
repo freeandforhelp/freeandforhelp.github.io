@@ -249,3 +249,7 @@ a:visited { text-decoration: none; color:unset; }
 	margin-left: 18px;
 	font-size: 12pt;
 }
+
+.card-img-top{
+	height: 178px;
+}
