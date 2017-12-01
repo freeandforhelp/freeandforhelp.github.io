@@ -1,17 +1,17 @@
 $(document).ready(function() {
     homePage();
     // ask posts
-    addEntry("Nick","category-transport","The busses aren't running and I don't have a car","ask");
-    addEntry("Sarah","category-shelter","I have no electricity right now","ask");
-    addEntry("Johnny","category-food-water","I am looking for distilled water specifically","ask");
-    addEntry("Annie","category-labor","I need help moving my couch into my truck","ask");
-    addEntry("Thomas","category-transport","I need a ride to the hospital","ask");
+    addEntry("Nick","category-transport","The busses aren't running and I don't have a car","ask","nick@gmail.com");
+    addEntry("Sarah","category-shelter","I have no electricity right now","ask","sarah@gmail.com");
+    addEntry("Johnny","category-food-water","I am looking for distilled water specifically","ask","johnny@gmail.com");
+    addEntry("Annie","category-labor","I need help moving my couch into my truck","ask","annie@gmail.com");
+    addEntry("Thomas","category-transport","I need a ride to the hospital","ask","thomas@gmail.com");
     // give posts
-    addEntry("Miley","category-food-water","I have 10 cans of beans to provide","give");
-    addEntry("Charlie","category-shelter","I have an extra room in my house","give");
-    addEntry("Tyler","category-food-water","I have 10 gallons of water","give");
-    addEntry("Philip","category-transport","I have space in my pickup to move things","give");
-    addEntry("Thomas","category-transport","I have room in my car to drop off kids at the elementary school with my son","give");
+    addEntry("Miley","category-food-water","I have 10 cans of beans to provide","give","miley@gmail.com");
+    addEntry("Charlie","category-shelter","I have an extra room in my house","give","charlie@gmail.com");
+    addEntry("Tyler","category-food-water","I have 10 gallons of water","give","tyler@gmail.com");
+    addEntry("Philip","category-transport","I have space in my pickup to move things","give","philip@gmail.com");
+    addEntry("Thomas","category-transport","I have room in my car to drop off kids at the elementary school with my son","give","thomas@gmail.com");
 });
 
 function askPage() {
@@ -160,15 +160,15 @@ $("#filter-labor").click(function() {
 
 });
 
-function addEntry(firstName, category, description, askOrGive) {
+function addEntry(firstName, category, description, askOrGive, email) {
     if(askOrGive == "ask") {
-        $("#ask-list").prepend(createCard(firstName, category, description,askOrGive));
+        $("#ask-list").prepend(createCard(firstName, category, description,askOrGive,email));
     } else {
-        $("#give-list").prepend(createCard(firstName, category, description,askOrGive));
+        $("#give-list").prepend(createCard(firstName, category, description,askOrGive,email));
     }
 }
 
-function createCard(firstName, category, description, askOrGive) {
+function createCard(firstName, category, description, askOrGive, email) {
     var category;
     if(category == "category-other") {
         categoryName = "Other";
@@ -198,7 +198,9 @@ function createCard(firstName, category, description, askOrGive) {
     newEntry += "<p class=\"distance text-muted\">1 mile away</p>";
     newEntry += "</div>";
     newEntry += "<div class=\"col-sm-3\">";
+    newEntry += "<a href=mailto:" + email+">";
     newEntry += "<button>Contact "+firstName+"</button>";
+    newEntry += "</a>";
     newEntry += "</div></div></div></li>";
 
     return newEntry;
@@ -242,6 +244,7 @@ function createEntry(firstName, category, description, askOrGive) {
 function addHelp() {
     var firstName = $("#give-first-name").val();
     var lastName = $("#give-last-name").val();
+    var email = $("#give-email").val();
     var category = "";
     var description = $("#give-description").val();
     if($("#give-cat-labor").is(':checked')) {
@@ -261,7 +264,7 @@ function addHelp() {
         category = "category-shelter";
     }
 
-    var newEntry = createCard(firstName, category, description, "give");
+    var newEntry = createCard(firstName, category, description, "give", email);
     // newEntry += "<li class=\""+category+"\"> <h4> <b class=\"name\">" + firstName + "</b>";
     // newEntry += " offers <b class=\"category\">" + categoryName + "</b></h4>";
     // newEntry += "<p class=\"description\">" + description + "</p></li>";
@@ -271,28 +274,30 @@ function addHelp() {
 }
 
 function addAsk() {
-    var firstName = $("#give-first-name").val();
-    var lastName = $("#give-last-name").val();
+    var firstName = $("#ask-first-name").val();
+    var lastName = $("#ask-last-name").val();
+    var email = $("#ask-email").val();
+
     var category = "";
-    var description = $("#give-description").val();
-    if($("#give-cat-labor").is(':checked')) {
+    var description = $("#ask-description").val();
+    if($("#ask-cat-labor").is(':checked')) {
         categoryName = "Labor";
         category = "category-labor";
-    } else if($("#give-cat-food-water").is(':checked')) {
+    } else if($("#ask-cat-food-water").is(':checked')) {
         categoryName = "Food/Water";
         category = "category-food-water";
-    } else if($("#give-cat-transport").is(':checked')) {
+    } else if($("#ask-cat-transport").is(':checked')) {
         categoryName = "Transportation";
         category = "category-transport";
-    } else if($("#give-cat-other").is(':checked')) {
+    } else if($("#ask-cat-other").is(':checked')) {
         categoryName = "Other";
         category = "category-other";
-    } else if($("#give-cat-shelter").is(':checked')) {
+    } else if($("#ask-cat-shelter").is(':checked')) {
         categoryName = "Shelter";
         category = "category-shelter";
     }
 
-    var newEntry = createCard(firstName, category, description, "ask");
+    var newEntry = createCard(firstName, category, description, "ask", email);
     // newEntry += "<li class=\""+category+"\"> <h4> <b class=\"name\">" + firstName + "</b>";
     // newEntry += " offers <b class=\"category\">" + categoryName + "</b></h4>";
     // newEntry += "<p class=\"description\">" + description + "</p></li>";
